@@ -21,7 +21,7 @@ Using another coding agent? [`@stackguardian/mcp-wizard`](https://github.com/Sta
 
 ## Contributing
 
-The skills are copied from [stackguardian-mcp](https://github.com/StackGuardian/stackguardian-mcp) by `scripts/sync-skills.sh`; change them there. The `sync-skills` workflow opens a pull request here when they change, with the plugin version bumped.
+Don't edit the skills here. They come from the StackGuardian MCP server's repository, whose `sync_public_skills.yml` workflow opens a pull request here when they change, with the plugin version bumped.
 
 Check a change locally with `claude plugin validate --strict plugins/stackguardian` and `claude plugin validate --strict .`, then try it with `claude --plugin-dir plugins/stackguardian`.
 

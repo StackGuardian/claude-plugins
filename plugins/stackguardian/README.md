@@ -42,6 +42,9 @@ Tools that create, change, run or delete things act on your real organization. C
 | `sg-create-policy` | Add a guardrail that blocks, warns on or requires approval for changes |
 | `sg-manage-roles` | Create, change or delete custom roles |
 | `sg-manage-secrets` | Store, rotate or delete vault secrets and use them in workflows |
+| `sg-create-connector` | Create a cloud or version-control connector that workflows deploy through |
+| `sg-manage-connectors` | Inspect, test, update, scan or delete an existing connector |
+| `sg-troubleshoot-connector` | Find out why a connector or a run that uses it is failing |
 | `sg-writing-stackguardian-workflow-terraform` | Write or debug StackGuardian provider Terraform for workflows |
 | `sg-writing-stackguardian-workflow-group-terraform` | Write or debug Terraform for workflow groups |
 | `sg-writing-stackguardian-policy-terraform` | Write or debug Terraform for policies |
