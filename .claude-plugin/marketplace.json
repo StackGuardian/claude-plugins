@@ -1,0 +1,18 @@
+{
+  "name": "stackguardian",
+  "description": "StackGuardian plugins for Claude Code: the StackGuardian MCP server and skills for workflows, stacks, policies, roles, secrets and Terraform.",
+  "owner": {
+    "name": "StackGuardian",
+    "email": "support@stackguardian.io",
+    "url": "https://www.stackguardian.io"
+  },
+  "plugins": [
+    {
+      "name": "stackguardian",
+      "source": "./plugins/stackguardian",
+      "description": "Run, debug and change StackGuardian workflows, stacks, policies, roles and secrets from Claude, and write StackGuardian Terraform.",
+      "category": "devops",
+      "tags": ["stackguardian", "terraform", "opentofu", "iac", "platform-engineering", "cloud-governance"]
+    }
+  ]
+}
