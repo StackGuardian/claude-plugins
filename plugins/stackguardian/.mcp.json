@@ -2,11 +2,11 @@
   "mcpServers": {
     "stackguardian-eu": {
       "type": "http",
-      "url": "https://api.app.stackguardian.io/api/v1/orgs/${user_config.org}/mcp"
+      "url": "https://api.app.stackguardian.io/api/v1/mcp"
     },
     "stackguardian-us": {
       "type": "http",
-      "url": "https://api.us.stackguardian.io/api/v1/orgs/${user_config.org}/mcp"
+      "url": "https://api.us.stackguardian.io/api/v1/mcp"
     }
   }
 }

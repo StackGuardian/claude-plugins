@@ -1,7 +1,7 @@
 {
   "name": "stackguardian",
   "displayName": "StackGuardian",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Connects Claude to your StackGuardian organization through the StackGuardian MCP server, with guided skills to create and update workflows, stacks, policies, roles and secrets, and to write StackGuardian Terraform.",
   "author": {
     "name": "StackGuardian",
@@ -24,13 +24,5 @@
   "documentationUrl": "https://docs.stackguardian.io/docs/mcp-server/",
   "supportUrl": "https://www.stackguardian.io/contact",
   "privacyPolicyUrl": "https://www.stackguardian.io/pages/privacy-policy",
-  "termsOfServiceUrl": "https://www.stackguardian.io/pages/terms-conditions",
-  "userConfig": {
-    "org": {
-      "type": "string",
-      "title": "StackGuardian organization",
-      "description": "The organization name from your dashboard URL, e.g. my-org in app.stackguardian.io/orchestrator/orgs/my-org.",
-      "required": true
-    }
-  }
+  "termsOfServiceUrl": "https://www.stackguardian.io/pages/terms-conditions"
 }
