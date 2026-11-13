@@ -15,7 +15,7 @@ In Claude Code:
 /plugin install stackguardian@stackguardian
 ```
 
-Claude Code asks for your StackGuardian organization. Then run `/mcp` and sign in to `stackguardian-eu` or `stackguardian-us`, whichever region your organization is in. See the [plugin README](plugins/stackguardian/README.md) for details.
+Then run `/mcp` and sign in to `stackguardian-eu` or `stackguardian-us`, whichever region your organization is in, and choose the organization on the consent page. See the [plugin README](plugins/stackguardian/README.md) for details.
 
 Using another coding agent? [`@stackguardian/mcp-wizard`](https://github.com/StackGuardian/stackguardian-mcp) installs the same server and skills into Codex, Cursor, VS Code, Gemini CLI and more.
 

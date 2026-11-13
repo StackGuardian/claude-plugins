@@ -10,13 +10,14 @@ Work with [StackGuardian](https://www.stackguardian.io) from Claude. Ask in plai
    /plugin install stackguardian --marketplace StackGuardian/claude-plugins
    ```
 
-   Claude Code asks for your **StackGuardian organization**: the name in your dashboard URL, for example `my-org` in `app.stackguardian.io/orchestrator/orgs/my-org`.
-2. Run `/mcp` and sign in to the server for your region: **stackguardian-eu** (`app.stackguardian.io`) or **stackguardian-us** (`us.stackguardian.io`). The browser opens the StackGuardian consent page, where you choose the roles Claude may use and how long access lasts. You can ignore the server for the region you don't use.
+2. Run `/mcp` and sign in to the server for your region: **stackguardian-eu** (`app.stackguardian.io`) or **stackguardian-us** (`us.stackguardian.io`). The browser opens the StackGuardian consent page, where you choose the organization, the roles Claude may use and how long access lasts. You can ignore the server for the region you don't use.
 3. Ask something small, such as _"Show my five most recent StackGuardian workflow runs and their status."_
 
-To change the organization later, run `/plugin configure stackguardian@stackguardian`, then sign in again with `/mcp`.
+Upgrading from version 1.0 asks you to sign in once more, because the plugin now uses one server address per region instead of one per organization.
 
-The bundled MCP server works in Claude Code. In claude.ai chat and Cowork the skills load, but those apps don't fill in the organization in the server URL: add `https://api.app.stackguardian.io/api/v1/orgs/<your-org>/mcp` (or `api.us.stackguardian.io` for the US region) as a custom connector in _Settings → Connectors_ instead.
+To switch to another organization, open `/mcp`, clear the server's authentication, then sign in again and choose the other organization on the consent page.
+
+The same server works in claude.ai chat and Cowork: add `https://api.app.stackguardian.io/api/v1/mcp` (or `https://api.us.stackguardian.io/api/v1/mcp` for the US region) as a custom connector in _Settings → Connectors_.
 
 ## What you can ask
 
