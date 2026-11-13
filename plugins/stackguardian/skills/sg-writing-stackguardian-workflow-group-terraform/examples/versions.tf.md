@@ -1,3 +1,8 @@
+# versions.tf
+
+Save this as `versions.tf` to use it.
+
+```hcl
 terraform {
   required_version = ">= 1.5"
 
@@ -15,3 +20,4 @@ terraform {
 #   STACKGUARDIAN_ORG_NAME  org slug
 #   STACKGUARDIAN_API_URI   https://api.app.stackguardian.io (EU) or https://api.us.stackguardian.io (US) — there is no default
 provider "stackguardian" {}
+```

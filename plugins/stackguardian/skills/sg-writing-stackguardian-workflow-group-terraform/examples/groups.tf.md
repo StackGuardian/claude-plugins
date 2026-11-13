@@ -1,3 +1,8 @@
+# groups.tf
+
+Save this as `groups.tf` to use it.
+
+```hcl
 # A small group hierarchy, a workflow inside it, and how policies / lookups address groups.
 
 resource "stackguardian_workflow_group" "platform" {
@@ -52,3 +57,4 @@ output "chaining_group_id" {
   description = "wf_chaining / workflow_group_id / runtime-reference form: the bare id"
   value       = stackguardian_workflow_group.networking.id
 }
+```

@@ -1,7 +1,7 @@
 {
   "name": "stackguardian",
   "displayName": "StackGuardian",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Connects Claude to your StackGuardian organization through the StackGuardian MCP server, with guided skills to create and update workflows, stacks, policies, roles and secrets, and to write StackGuardian Terraform.",
   "author": {
     "name": "StackGuardian",

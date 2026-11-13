@@ -1,3 +1,8 @@
+# config_rules.tf
+
+Save this as `config_rules.tf` to use it.
+
+```hcl
 # Config-time rules (stackguardian/json): evaluated against the WORKFLOW DEFINITION when a workflow
 # in scope is created or updated (terraform apply of stackguardian_workflow_* gets a 403 on FAIL)
 # and again when each run is built.
@@ -107,3 +112,4 @@ resource "stackguardian_policy" "workflow_standards" {
     },
   ]
 }
+```

@@ -1,3 +1,8 @@
+# custom_steps.tf
+
+Save this as `custom_steps.tf` to use it.
+
+```hcl
 # CUSTOM workflows built from StackGuardian's step templates:
 # an Ansible playbook, a Helm release (with approval) and a CloudFormation change set.
 
@@ -146,3 +151,4 @@ resource "stackguardian_workflow_git" "cfn_bucket" {
   approvers                    = ["platform@acme.com"]
   number_of_approvals_required = 1
 }
+```

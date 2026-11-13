@@ -1,3 +1,8 @@
+# opa_and_marketplace.tf
+
+Save this as `opa_and_marketplace.tf` to use it.
+
+```hcl
 # Rego from a private GitHub repo, scoped to every workflow deploying through one connector,
 # plus a StackGuardian marketplace policy template org-wide as warn-only.
 
@@ -68,3 +73,4 @@ resource "stackguardian_policy" "aws_best_practices" {
     }
   }]
 }
+```

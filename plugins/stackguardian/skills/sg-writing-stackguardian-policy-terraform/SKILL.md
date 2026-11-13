@@ -137,7 +137,7 @@ resource "stackguardian_policy" "no_public_s3" {
 | Count cap | `count` + `LessThanEqualTo N` |
 | Monthly cost cap | `stackguardian/infracost`, `total_monthly_cost`, `resource_type = ["*"]`, `LessThanEqualTo 500` |
 | Approval on deletes | `action`, type `"*"`, `NotContainedIn ["delete"]`, `on_fail = "APPROVAL_REQUIRED"` |
-| Config guardrail | `stackguardian/json`, `get_value`, `key_path`; e.g. managed state = `is_custom \|\| uses_managed_state` (tolerance 1 on the managed key — see `examples/config_rules.tf`) |
+| Config guardrail | `stackguardian/json`, `get_value`, `key_path`; e.g. managed state = `is_custom \|\| uses_managed_state` (tolerance 1 on the managed key — see `examples/config_rules.tf.md`) |
 | Scope an existing group/workflow | a literal/local path (`local.net = "platform/networking"` → `"/wfgrps/${local.net}"`), with `data "stackguardian_workflow_group" { id = local.net }` as a plan-time existence check. Don't use `data.<group>.id` in the path: it is only the leaf for nested groups (live) |
 | Marketplace rule | `policy_vcs_config = { use_marketplace_template = true, policy_template_id = "/<owner-org>/<name>:<n>" }` |
 | Git Tirith | `SG_POLICY_FRAMEWORK` + git kind; the file must be `<working_dir>/tirith.json`; runtime only |
@@ -174,5 +174,5 @@ resource "stackguardian_policy" "no_public_s3" {
 - `references/sources-and-lifecycle.md` — inline / git / OPA / marketplace sources, scope
   resolution, approvals, provider round-trip behaviour, import, destroy, error catalog.
 - `references/schema.md` — exact `stackguardian_policy` schema (provider 1.12.3).
-- `examples/*.tf` — validated with `terraform`/`tofu validate`, applied live, and every Tirith
+- `examples/*.tf.md` — validated with `terraform`/`tofu validate`, applied live, and every Tirith
   document executed against Tirith 1.0.5 with passing and failing sample plans (`examples/README.md`).

@@ -1,3 +1,8 @@
+# git_terraform.tf
+
+Save this as `git_terraform.tf` to use it.
+
+```hcl
 # Terraform workflow from a private GitHub repo, deploying to AWS through an OIDC connector,
 # with SG-managed state, a 2-of-3 approval gate, a secret env var, nightly drift detection,
 # error/drift emails and a private runner.
@@ -92,3 +97,4 @@ resource "stackguardian_workflow_git" "payments_api" {
     names = [data.stackguardian_runner_group.prod.id] # exactly one bare runner group id
   }
 }
+```

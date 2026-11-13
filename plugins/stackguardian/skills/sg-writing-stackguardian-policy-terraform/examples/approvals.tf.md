@@ -1,3 +1,8 @@
+# approvals.tf
+
+Save this as `approvals.tf` to use it.
+
+```hcl
 # Two approval gates in one policy, org-wide: plans that delete anything, and plans whose
 # estimated monthly cost exceeds $500. Approvers are policy-level and shared by both rules.
 # Runtime approvals pause before apply; plan-only runs never pause.
@@ -61,3 +66,4 @@ resource "stackguardian_policy" "change_approvals" {
     },
   ]
 }
+```

@@ -161,7 +161,7 @@ resource "stackguardian_workflow_git" "payments_api" {
 11. **Provider 1.12.3 bug:** `workflow_from_template` with a template owned by *another* org (every
     `/stackguardian/...` marketplace template) fails at apply with `Could not read template
     revision … 401 Unauthorized` (live). Use an own-org copy of the template
-    (`examples/own_template.tf`) or `workflow_git` on the template's repo.
+    (`examples/own_template.tf.md`) or `workflow_git` on the template's repo.
 12. **Template upgrades take two applies** when the new revision is created in the same config:
     publish the revision first, then point `iac_template_id` at it (same apply → *inconsistent
     final plan*, live).
@@ -214,4 +214,4 @@ resource "stackguardian_workflow_git" "payments_api" {
 - `references/automation-and-outputs.md` — schedules, drift, VCS triggers, notifications, webhooks, chaining, outputs.
 - `references/lifecycle.md` — create/update/clear semantics, replacement, import, destroy, error catalog.
 - `references/schema.md` — exact attribute tree of every workflow-side resource and the runner group (provider 1.12.3).
-- `examples/*.tf` — validated with `terraform validate` and `tofu validate`; see `examples/README.md`.
+- `examples/*.tf.md` — validated with `terraform validate` and `tofu validate`; see `examples/README.md`.

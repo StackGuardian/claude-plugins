@@ -1,3 +1,8 @@
+# automation_opentofu.tf
+
+Save this as `automation_opentofu.tf` to use it.
+
+```hcl
 # OpenTofu workflow from a public repo with a weekday schedule, a completion webhook,
 # error email, and a chained follow-up workflow that runs after every successful run.
 
@@ -96,3 +101,4 @@ resource "stackguardian_workflow_git" "site" {
     }
   }
 }
+```

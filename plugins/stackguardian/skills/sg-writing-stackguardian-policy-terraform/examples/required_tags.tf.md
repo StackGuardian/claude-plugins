@@ -1,3 +1,8 @@
+# required_tags.tf
+
+Save this as `required_tags.tf` to use it.
+
+```hcl
 # Runtime rule: EC2 instances and RDS databases must carry a CostCenter tag and Environment=production.
 # One evaluator per resource type and tag; tolerance 1 so plans without that type pass.
 
@@ -59,3 +64,4 @@ resource "stackguardian_policy" "required_tags" {
     }
   }]
 }
+```
