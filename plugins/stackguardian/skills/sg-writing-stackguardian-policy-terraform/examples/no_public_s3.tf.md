@@ -1,3 +1,8 @@
+# no_public_s3.tf
+
+Save this as `no_public_s3.tf` to use it.
+
+```hcl
 # Runtime rule: deny public canned ACLs on aws_s3_bucket_acl and require block_public_acls on declared
 # aws_s3_bucket_public_access_block resources. Not covered: buckets without a public access block
 # (a direct_references recipe exists, with limits: references/tirith.md §8), ACL grants via
@@ -66,3 +71,4 @@ resource "stackguardian_policy" "no_public_s3" {
     }
   }]
 }
+```

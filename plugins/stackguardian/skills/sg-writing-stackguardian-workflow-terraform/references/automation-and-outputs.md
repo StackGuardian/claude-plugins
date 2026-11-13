@@ -182,7 +182,7 @@ locals {
 - It reads the **latest** outputs at plan time and fails until they exist: inactive workflow →
   `Request failure to read workflow outputs` (live); no outputs yet → `Workflow output is not valid
   JSON`. A config that creates a workflow cannot read its outputs in the same apply — gate the data
-  source with `count = var.<producer>_has_run ? 1 : 0` (`examples/outputs_and_references.tf`).
+  source with `count = var.<producer>_has_run ? 1 : 0` (`examples/outputs_and_references.tf.md`).
 - Sensitive Terraform outputs come back masked (`<sensitive>`).
 - If only the next run needs the value (not Terraform), use `$${workflow::<group>.<wf>.outputs.<key>.value}`
   in an env var or input instead (`references/execution.md` §7).

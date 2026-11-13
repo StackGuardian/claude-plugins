@@ -1,3 +1,8 @@
+# git_vcs_triggers.tf
+
+Save this as `git_vcs_triggers.tf` to use it.
+
+```hcl
 # GitOps: plan on every PR into main, apply (after approval) on every push to main.
 # Triggers are registered by a second API call; if that fails the provider deletes the new workflow.
 
@@ -49,3 +54,4 @@ resource "stackguardian_workflow_git" "vpc" {
   }
   # To stop triggering later, set every enabled = false. Removing vcs_triggers unregisters nothing.
 }
+```

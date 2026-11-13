@@ -1,3 +1,8 @@
+# outputs_and_references.tf
+
+Save this as `outputs_and_references.tf` to use it.
+
+```hcl
 # Passing values between workflows.
 #  - At RUN time: a ${workflow::...} reference, resolved when the consumer runs.
 #  - At PLAN time: the stackguardian_workflow_outputs data source (only after the producer has
@@ -73,3 +78,4 @@ data "stackguardian_workflow_outputs" "network" {
 output "vpc_id" {
   value = var.network_has_run ? jsondecode(data.stackguardian_workflow_outputs.network[0].data["vpc_id"]).value : null
 }
+```

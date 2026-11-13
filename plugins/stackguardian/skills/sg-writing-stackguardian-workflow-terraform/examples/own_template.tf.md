@@ -1,3 +1,8 @@
+# own_template.tf
+
+Save this as `own_template.tf` to use it.
+
+```hcl
 # Your own reusable template (container + published revision) and two workflows built from it:
 # one inheriting everything, one overriding and suppressing template values.
 #
@@ -128,3 +133,4 @@ resource "stackguardian_workflow_from_template" "vpc_prod" {
   approvers                    = ["netops@acme.com"]
   number_of_approvals_required = 1
 }
+```

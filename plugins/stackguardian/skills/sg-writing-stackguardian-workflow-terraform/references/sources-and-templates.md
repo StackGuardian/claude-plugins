@@ -83,7 +83,7 @@ Could not read template revision "/stackguardian/aws-s3-demo-website:16" to reso
 Workarounds until the provider is fixed:
 1. **Own-org copy** — `stackguardian_workflow_template` + `_revision` pointing at the same
    repo/ref and inputs, then `workflow_from_template` on `/<your-org>/<copy>:<n>`
-   (`examples/own_template.tf`).
+   (`examples/own_template.tf.md`).
 2. **`stackguardian_workflow_git`** on the template's source repository, with the settings written
    out (no template linkage or upgrades).
 3. Create that workflow outside Terraform (dashboard / API / MCP `create_workflow`). Importing it
@@ -159,7 +159,7 @@ settings) — review the plan.
 
 ## 3. Your own templates — `stackguardian_workflow_template` + `_revision`
 
-The template is a container; the revision holds the content. Minimal pair: `examples/own_template.tf`.
+The template is a container; the revision holds the content. Minimal pair: `examples/own_template.tf.md`.
 
 - `template_name` becomes the template `id` when it is slug-shaped; otherwise the server
   slugs it and appends a random suffix (live: `ZZ Skill Test 20261021` →

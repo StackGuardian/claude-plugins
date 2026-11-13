@@ -121,4 +121,4 @@ Terraform keeps them). The server has no nesting-depth limit; the dashboard stop
 | Deleting a group that still has dashboard-created workflows | 400 `Workflow Group not empty` |
 
 Worked example (validated with `terraform validate` and `tofu validate`, applied live):
-`examples/groups.tf`.
+`examples/groups.tf.md`.

@@ -1,3 +1,8 @@
+# network_guardrails.tf
+
+Save this as `network_guardrails.tf` to use it.
+
+```hcl
 # Runtime rules: no world-open ingress (IPv4/IPv6), literal EU provider regions only (Terraform and
 # OpenTofu registries), approved instance types.
 
@@ -62,3 +67,4 @@ resource "stackguardian_policy" "network_guardrails" {
     }
   }]
 }
+```
