@@ -51,11 +51,36 @@ into the other:
 
 ### Git mode
 
+0. **Find the repository first — the user rarely knows the clone URL.** If
+   they name a repository ("deploy payments-infra on develop"), call
+   `list_vcs_repositories(searchQuery='<name>')`; if they want to browse,
+   call it with no arguments. It checks the org's VCS connectors (at most 5
+   per call) and returns rows with `name`, `connectorId`, `defaultBranch`
+   and a ready-made `source`.
+   - Present the matches (name, connector, default branch) and let the user
+     pick — never pick for them among several, even when one is
+     `exactMatch`.
+   - Take the picked row's `source` **as-is** (`repo`, `ref`, `gitAuthRef`);
+     create_workflow takes the provider kind from the connector.
+     It already answers step 2 (the connector implies private) and step 3.
+   - **Confirm the branch**: `ref` is the repository's default branch. If the
+     user names another branch, put it in `source.ref` exactly as given —
+     there is no branch listing, so say it is unchecked until the first run.
+   - Then go to step 1 for `workingDir` / submodules only.
+   - Fall back to the manual flow below when the repository is not listed:
+     a connector came back `noneReturned`, `failed`, `timedOut`,
+     `unsupported` or `groupManaged`; the repository is public with no
+     connector; or it lives on a plain git host (GIT_OTHER). For
+     `notAttempted` connectors, ask the user which to check and call again
+     with `connectorId`. Follow the response's `note`; **never tell the user
+     they have no repositories** because a connector returned nothing — the
+     platform answers that way for failures too.
 1. Collect the clone URL (`source.repo` — HTTPS or SSH form both work),
    optional branch/tag/commit (`source.ref`, repo default branch when
    omitted) and optional subdirectory holding the IaC root
    (`source.workingDir`, repo root when omitted). Ask about submodules only
    if the code vendors modules that way (`source.includeSubModule=true`).
+   With a `source` from step 0, only `workingDir` and submodules are left.
 2. **Ask whether the repository is public or private — never assume.** The
    tool has no default and refuses the call until it knows:
    - **Public**: pass `source.isPrivateRepo=false` explicitly.
